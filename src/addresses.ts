@@ -47,7 +47,9 @@ export const V2_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.BNB]: '0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6',
   [ChainId.POLYGON]: '0x9e5A52f57b3038F1B8EeE45F28b3C1967e22799C',
   [ChainId.CELO]: '0x79a530c8e2fA8748B7B40dd3629C0520c2cCf03f',
-  [ChainId.BLAST]: '0x5C346464d33F90bABaf70dB6388507CC889C1070'
+  [ChainId.BLAST]: '0x5C346464d33F90bABaf70dB6388507CC889C1070',
+  [ChainId.CPCHAIN]: '0x2FC7B621aB51108e3108dD0EbCE76cb05545743a',
+  [ChainId.CPCHAIN_TESTNET]: '0x593b44b2C309468072A8f4d952a085E25A4E8E48'
 }
 /**
  * @deprecated use V2_ROUTER_ADDRESSES instead
@@ -62,7 +64,9 @@ export const V2_ROUTER_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24',
   [ChainId.BNB]: '0x4752ba5dbc23f44d87826276bf6fd6b1c372ad24',
   [ChainId.POLYGON]: '0xedf6066a2b290c185783862c7f4776a2c8077ad1',
-  [ChainId.BLAST]: '0xBB66Eb1c5e875933D44DAe661dbD80e5D9B03035'
+  [ChainId.BLAST]: '0xBB66Eb1c5e875933D44DAe661dbD80e5D9B03035',
+  [ChainId.CPCHAIN]: '0x232F7E1486eC0B54eBA4FCdd08F0B8Cf4247f0D3',
+  [ChainId.CPCHAIN_TESTNET]: '0x232F7E1486eC0B54eBA4FCdd08F0B8Cf4247f0D3'
 }
 
 // Networks that share most of the same addresses i.e. Mainnet, Goerli, Optimism, Arbitrum, Polygon
@@ -235,6 +239,22 @@ const BLAST_ADDRESSES: ChainAddresses = {
   swapRouter02Address: '0x549FEB8c9bd4c12Ad2AB27022dA12492aC452B66'
 }
 
+// CPChain addresses
+const CPCHAIN_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x0000000000000000000000000000000000000000', // 如果没有V3合约，可以设置为零地址或者后续添加
+  multicallAddress: '0x0000000000000000000000000000000000000000', // 需要部署Multicall合约
+  quoterAddress: '0x0000000000000000000000000000000000000000', // 需要部署Quoter合约
+  // 可以添加其他需要的合约地址
+}
+
+// CPChain Testnet addresses  
+const CPCHAIN_TESTNET_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x0000000000000000000000000000000000000000', // 如果没有V3合约，可以设置为零地址或者后续添加
+  multicallAddress: '0x0000000000000000000000000000000000000000', // 需要部署Multicall合约
+  quoterAddress: '0x0000000000000000000000000000000000000000', // 需要部署Quoter合约
+  // 可以添加其他需要的合约地址
+}
+
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
   [ChainId.MAINNET]: MAINNET_ADDRESSES,
   [ChainId.OPTIMISM]: OPTIMISM_ADDRESSES,
@@ -256,7 +276,9 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.ZORA]: ZORA_ADDRESSES,
   [ChainId.ZORA_SEPOLIA]: ZORA_SEPOLIA_ADDRESSES,
   [ChainId.ROOTSTOCK]: ROOTSTOCK_ADDRESSES,
-  [ChainId.BLAST]: BLAST_ADDRESSES
+  [ChainId.BLAST]: BLAST_ADDRESSES,
+  [ChainId.CPCHAIN]: CPCHAIN_ADDRESSES,
+  [ChainId.CPCHAIN_TESTNET]: CPCHAIN_TESTNET_ADDRESSES
 }
 
 /* V3 Contract Addresses */
